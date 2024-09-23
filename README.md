@@ -13,9 +13,9 @@ cd your/config/path
 nix flake init -t github:quinneden/nixos-asahi-starter
 ```
 
-Modify the configuration as needed, I recommend regenerating with
-nixos-generate-config, however if you installed NixOS with the
-asahi-installer package, the existing hardware config should work.
+Modify the configuration as needed, I recommend regenerating nixos/hardware-configuration.nix
+using nixos-generate-config, however if you installed NixOS with the asahi-installer
+package, the existing hardware config should work.
 
 ```bash
 nixos-generate-config --show-hardware-config | tee nixos/hardware-configuration.nix
