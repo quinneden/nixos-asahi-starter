@@ -1,4 +1,5 @@
 {
+  config,
   username,
   pkgs,
   ...
@@ -8,7 +9,7 @@
   ];
 
   boot = {
-    m1n1CustomLogo = "fixme";
+    m1n1CustomLogo = ../assets/bootlogo-m1n1.png;
     loader = {
       systemd-boot.enable = true;
       efi.canTouchEfiVariables = false;
@@ -20,6 +21,7 @@
     setupAsahiSound = true;
     useExperimentalGPUDriver = true;
     experimentalGPUInstallMode = "replace";
+    peripheralFirmwareDirectory = /Users/quinn/asahi;
   };
 
   networking = {
@@ -38,11 +40,11 @@
     trusted-users = ["${username}" "root"];
     extra-nix-path = "nixpkgs=flake:nixpkgs";
     extra-substituters = [
-      "${secrets.cachix.nixos-asahi.url}"
+      "https://nixos-asahi.cachix.org"
       "https://cache.lix.systems"
     ];
     extra-trusted-public-keys = [
-      "${secrets.cachix.nixos-asahi.public-key}"
+      "nixos-asahi.cachix.org-1:CPH9jazpT/isOQvFhtAZ0Z18XNhAp29+LLVHr0b2qVk="
       "cache.lix.systems:aBnZUw8zA7H35Cz2RyKFVs3H4PlGTLawyY5KRbvJR8o="
     ];
   };
