@@ -10,7 +10,9 @@ NixOS installation on apple silicon hardware.
 ```bash
 mkdir -p your/config/path
 cd your/config/path
+git init
 nix flake init -t github:quinneden/nixos-asahi-starter
+git add .
 ```
 
 Modify the configuration as needed, I recommend regenerating nixos/hardware-configuration.nix

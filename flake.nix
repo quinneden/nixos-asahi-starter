@@ -12,7 +12,7 @@
     templates = {
       default = {
         description = "A starter flake template for configuring NixOS on an apple silicon machine.";
-        path = ./asahi-starter;
+        path = ./template;
       };
     };
   };
